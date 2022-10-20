@@ -50,7 +50,7 @@ order by TotalDeathCount desc
 
 --Global Numbers
 
-Select date, sum(new_cases) as new_cases, sum(cast(new_deaths as int)) as new_deaths, sum(cast(new_deaths as int))/sum(new_cases)*100 as DeathPercentage
+Select date, sum(new_cases) as total_cases, sum(cast(new_deaths as int)) as new_deaths, sum(cast(new_deaths as int))/sum(new_cases)*100 as DeathPercentage
 FROM PortfolioCovid..CovidDeaths$
 where continent is not null
 group by date
